@@ -135,7 +135,7 @@ function resetBoard(){
   inPlay = [true,true,true]
 }
 const shapes = ["crossShape", "squareShape", "triangleShape", "circleShape"];
-const timeDelay = 20;
+const timeDelay = 500;
 let wins = 0;
 let answered = 0;
 let inPlay = [false,false,false];
