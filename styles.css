@@ -1,0 +1,131 @@
+html{
+  background-color: rgb(44, 44, 46);
+}
+
+:root {
+  --shapeWidth: min(10vw, 10vh);
+  --rt3: sqrt(3);
+}
+.halfRow{
+  height: 4.5vh;
+}
+.fullRow{
+  height: 9vh;
+  
+}
+.gameRow{
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 85vw;
+}
+.gameFunnel{
+  width: 10%;
+  border-left: 2.5vw solid transparent;
+  border-right: 2.5vw solid transparent;
+  border-top: 4vh solid rgb(229,229,234);
+  margin-top: 0.75vh;
+}
+.flipped{
+  transform: rotate(180deg);
+  margin-bottom: 1.5vh;
+}
+.codesContainer{
+  width: 60vw;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.code{
+  width: 15vw;
+  height: 100%;
+  background-color: rgb(142,142,147);
+  border-radius: 3vh;
+  margin: 3vw;
+  font-size: max(2.5vw,1.9vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  cursor: default;
+}
+.shapesContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 12.5vw); /* Create columns for each item */
+  justify-content: space-between; /* Adjusts spacing between items */
+  gap:5vw;
+  padding: 1%;
+  margin: 1.5vh auto;
+  border-radius: 3vh;
+  background-color: rgb(99,99,102);
+}
+.shapeBox{
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crossShape {
+  background: blue;
+  position: relative;
+  height: var(--shapeWidth);
+  width: calc(var(--shapeWidth)*0.5);
+}
+.crossShape:after {
+  background: blue;
+  content: "";
+  position: absolute;
+  height: calc(var(--shapeWidth)*0.5);
+  left: calc(var(--shapeWidth)*-0.25);
+  top: calc(var(--shapeWidth)*0.25);
+  width: var(--shapeWidth);
+}
+.squareShape{
+  width: 10vw;
+  height: 10vw;
+  background-color: red;
+  max-height: 10vh;
+  max-width: 10vh;
+}
+.triangleShape{
+  width: 0;
+  height: 0;
+  border-left: calc(var(--shapeWidth)/var(--rt3)) solid transparent;
+  border-right: calc(var(--shapeWidth)/var(--rt3)) solid transparent;
+  border-bottom: var(--shapeWidth) solid yellow;
+}
+.circleShape{
+  width: var(--shapeWidth);
+  height: var(--shapeWidth);
+  background: green;
+  border-radius: 50%;
+}
+#score{
+  font-size: 5vh;
+  width: 30vh;
+  height: 100%;
+  border-radius: 3vh;
+  background-color: rgb(99,99,102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  cursor: default;
+}
+.arrow {
+  /* width: 15vw; */
+  width: 0;
+  height: 0;
+  border-left: max(0.75vw, 1vh) solid transparent;
+  border-right: max(0.75vw, 1vh) solid transparent;
+  border-bottom: 2.25vh solid rgb(229,229,234); /* Arrow color */
+  rotate:180deg;
+}
